@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./picture/sire_logo.png" height="70">
+<img src="pictureire_logo.png" height="70">
 
 **Simulation-informed Revenue Extrapolation (SiRE) with confidence estimate for scaleup companies using scarce timeseries data.**
 
@@ -49,8 +49,8 @@ To run SiRE on both datasets, follow the steps below.
 
 - Create a virtual Python environment by running:
 ```bash
-$ conda create --name sire python=3.8
-$ conda activate sire
+$ conda create --name sire-lib python=3.8
+$ conda activate sire-lib
 ```
 
 - Install the dependent libraries:
@@ -71,7 +71,7 @@ To experiment SiRE on [ARR129](data/arr129.json) dataset, run through the notebo
 
 Following is the forecast (from 2018-05-01) visualization for company in ARR129 with ID `5cf74ff84639c79510ef8491d4725967336ad3627216a50553f030f9c51d93bc`.
 
-<img src="./picture/example_viz.png" alt="drawing" width="500"/>
+<img src="picturexample_viz.png" alt="drawing" width="500"/>
 
 The corresponding predicted revenue points with 95% confidence interval (`95CI`) look like below.
 | DATE     |   MEAN |   `95CI`_low |   `95CI`_high |   MIN |   MAX |
