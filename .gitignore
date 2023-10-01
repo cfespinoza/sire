@@ -75,7 +75,7 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+sire-lib/.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -129,4 +129,7 @@ dmypy.json
 .pyre/
 
 # mac
-.DS_Store
+.DS_Store.idea
+**/.idea
+**/.ipynb_checkpoints
+**/.pytest_cache
