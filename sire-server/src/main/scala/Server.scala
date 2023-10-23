@@ -1,7 +1,7 @@
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model.StatusCodes
+import akka.http.scaladsl.model.{ContentTypes, HttpEntity, StatusCodes}
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.{ExceptionHandler, HttpApp, RejectionHandler, Route}
 import akka.stream.Materializer
@@ -71,7 +71,11 @@ object Server extends HttpApp with App {
           concat(
             get {
               pathSingleSlash {
-                complete("Welcome to SIRE!")
+                complete(
+                  HttpEntity(
+                    ContentTypes.`text/html(UTF-8)`,
+                    Constants.htmlContent
+                ))
               }
             },
             get {

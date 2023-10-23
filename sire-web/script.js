@@ -68,8 +68,8 @@ function submitForm() {
     jsonData.data.push(data);
   });
 
-  // fetch('http://sire-server-5c6aed86c9ce.herokuapp.com/predict', {
-  fetch('http://localhost:5050/predict', {
+  fetch('http://sire-server-5c6aed86c9ce.herokuapp.com/predict', {
+  // fetch('http://localhost:5050/predict', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
