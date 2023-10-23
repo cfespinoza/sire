@@ -4,9 +4,12 @@ import tempfile
 from datetime import datetime
 
 import fire
+import warnings
+
 
 from dataset import Dataset
 from extrapolations import Extrapolations
+warnings.filterwarnings("ignore")
 
 
 def load_data(json_data_path: str = None):

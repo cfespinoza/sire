@@ -1,3 +1,4 @@
+enablePlugins(JavaAppPackaging)
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.13.12"
@@ -18,5 +19,16 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-core" % "0.14.5",
   "io.circe" %% "circe-generic" % "0.14.5",
   "io.circe" %% "circe-parser" % "0.14.5",
-
+  "ch.megard" %% "akka-http-cors" % "1.2.0"
 )
+
+
+
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case "reference.conf" => MergeStrategy.concat
+  case x => MergeStrategy.first
+}
+Compile / mainClass  := Some("Server")
+assembly / mainClass := Some("Server")
+dockerBaseImage       := "sire-server-core:0.1.0-SNAPSHOT"
