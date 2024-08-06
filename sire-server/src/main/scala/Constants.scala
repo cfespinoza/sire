@@ -58,9 +58,9 @@ object Constants {
                       |      <label for="latest_known_dt">Latest Known Date:</label>
                       |      <input type="date" id="latest_known_dt" name="latest_known_dt" required>
                       |      <label>Customer Focus (comma-separated):</label>
-                      |      <input type="text" id="customer_focus" name="customer_focus" required>
+                      |      <input type="text" id="customer_focus" name="customer_focus">
                       |      <label>Sectors (comma-separated):</label>
-                      |      <input type="text" id="sectors" name="sectors" required>
+                      |      <input type="text" id="sectors" name="sectors">
                       |      <div id="data-entries">
                       |        <!-- Aquí se insertarán los formularios de datos -->
                       |      </div>
@@ -69,10 +69,15 @@ object Constants {
                       |      <button type="button" id="newExperimentBtn" disabled onclick="newExperiment()">Nuevo Experimento</button>
                       |    </form>
                       |  </div>
+                      |  <div id="graph-container">
+                      |    <canvas id="graph-canvas" width="400" height="200"></canvas>
+                      |  </div>
                       |  <div id="results-container" style="display: none;">
                       |    <h2>Resultados:</h2>
                       |    <table id="results-table">
                       |      <tr>
+                      |        <th>Customer</th>
+                      |        <th>Sector</th>
                       |        <th>Prediction Date</th>
                       |        <th>Revenue Mean</th>
                       |        <th>Revenue 95 Lower Bound</th>
@@ -81,9 +86,6 @@ object Constants {
                       |        <th>Revenue Max</th>
                       |      </tr>
                       |    </table>
-                      |  </div>
-                      |  <div id="graph-container">
-                      |    <canvas id="graph-canvas" width="400" height="200"></canvas>
                       |  </div>
                       |
                       |  <script>
@@ -129,8 +131,16 @@ object Constants {
                       |      document.getElementById("newExperimentBtn").disabled = false;
                       |      const companyID = document.getElementById('company_id').value;
                       |      const latestKnownDt = document.getElementById('latest_known_dt').value;
-                      |      const sectors = document.getElementById('sectors').value.split(',').map(s => s.trim());
-                      |      const customerFocus = document.getElementById('customer_focus').value.split(',').map(s => s.trim());
+                      |      // const sectors = document.getElementById('sectors').value.split(',').map(s => s.trim());
+                      |      let sectors = []
+                      |      if (document.getElementById('sectors').value.trim() !== '') {
+                      |          sectors = document.getElementById('sectors').value.split(',').map(s => s.trim());
+                      |      }
+                      |      // const customerFocus = document.getElementById('customer_focus').value.split(',').map(s => s.trim());
+                      |      let customerFocus = []
+                      |      if (document.getElementById('customer_focus').value.trim() !== '') {
+                      |        customerFocus = document.getElementById('customer_focus').value.split(',').map(s => s.trim());
+                      |      }
                       |      const dataForms = document.getElementsByClassName('data-form');
                       |
                       |      const jsonData = {
@@ -169,9 +179,30 @@ object Constants {
                       |      })
                       |      .then(response => response.json())
                       |      .then(data => {
-                      |        const parsedData = JSON.parse(data);
-                      |        displayResults(parsedData);
-                      |        drawResults(parsedData);
+                      |        let parsedData = Object.keys(data).map(key => {
+                      |          let customer = key;
+                      |          let sector = key;
+                      |          if (key.includes("_")) {
+                      |            customer = key.split("_")[0];
+                      |            sector = key.split("_")[1];
+                      |          }
+                      |          const dataset = data[key].map(item => {
+                      |            item.customer = customer;
+                      |            item.sector = sector;
+                      |            if (customer === sector){
+                      |              item.revenue_95_lower_bound = "";
+                      |              item.revenue_95_upper_bound = "";
+                      |              item.revenue_max = "";
+                      |              item.revenue_min = "";
+                      |            }
+                      |            return item;
+                      |          })
+                      |          return dataset;
+                      |        });
+                      |        const flatten = parsedData.flat();
+                      |        console.log(flatten);
+                      |        displayResults(flatten);
+                      |        drawResults(data);
                       |      })
                       |      .catch(error => console.error('Error:', error));
                       |    }
@@ -191,57 +222,52 @@ object Constants {
                       |      // Mostrar los resultados
                       |      data.forEach(item => {
                       |        const row = resultsTable.insertRow();
-                      |        Object.values(item).forEach(value => {
-                      |          const cell = row.insertCell();
-                      |          cell.textContent = value;
-                      |        });
+                      |        const sorted_keys = ["customer", "sector", "prediction_date", "revenue_mean", "revenue_95_lower_bound",
+                      |          "revenue_95_upper_bound", "revenue_min", "revenue_max"]
+                      |        sorted_keys.forEach(key => {
+                      |            const cell = row.insertCell();
+                      |            cell.textContent = item[key];
+                      |            });
                       |      });
                       |
                       |      resultsContainer.style.display = 'block';
                       |    }
                       |
                       |    function drawResults(data) {
-                      |        const fechas = data.map(d => new Date(d.prediction_date).toLocaleDateString());
-                      |        const revenueMean = data.map(d => d.revenue_mean);
-                      |        const revenue95Lower = data.map(d => d.revenue_95_lower_bound);
-                      |        const revenue95Upper = data.map(d => d.revenue_95_upper_bound);
-                      |        const revenueMin = data.map(d => d.revenue_min);
-                      |        const revenueMax = data.map(d => d.revenue_max);
+                      |        // Función para convertir los datos
+                      |        const convertData = (seriesData, label, color) => {
+                      |            return {
+                      |                label: label,
+                      |                data: seriesData.map(item => ({
+                      |                    x: new Date(parseInt(item.prediction_date)).toLocaleDateString(),
+                      |                    y: item.revenue_mean
+                      |                })),
+                      |                borderColor: color,
+                      |                backgroundColor: color,
+                      |                fill: false,
+                      |                tension: 0.1
+                      |            };
+                      |        };
+                      |
+                      |        const labels = ['real', 'mean'];
+                      |        const colors = { 'real': 'blue', 'mean': 'red' };
+                      |        const datasets = [];
+                      |
+                      |        Object.keys(data).forEach(key => {
+                      |            const color = labels.includes(key) ? colors[key] : 'gray';
+                      |            datasets.push(convertData(data[key], key, color));
+                      |        });
+                      |
+                      |        const graph_labels = Object.keys(data).map(key => new Date(parseInt(data[key].prediction_date)).toLocaleDateString());
+                      |        const fechas = [...new Set(graph_labels)];
+                      |
                       |
                       |        const ctx = document.getElementById('graph-canvas').getContext('2d');
                       |        const grafico = new Chart(ctx, {
                       |            type: 'line',
                       |            data: {
                       |                labels: fechas,
-                      |                datasets: [{
-                      |                    label: 'Media de Ingresos',
-                      |                    data: revenueMean,
-                      |                    borderColor: 'red',
-                      |                    backgroundColor: 'rgba(255, 0, 0, 0.1)',
-                      |                }, {
-                      |                    label: 'Límite Inferior del 95%',
-                      |                    data: revenue95Lower,
-                      |                    borderColor: 'rgba(0, 0, 0, 0)',
-                      |                    fill: '+1', // Rellena hacia el próximo dataset
-                      |                }, {
-                      |                    label: 'Límite Superior del 95%',
-                      |                    data: revenue95Upper,
-                      |                    borderColor: 'rgba(0, 0, 0, 0)',
-                      |                    fill: false,
-                      |                    backgroundColor: 'rgba(255, 0, 0, 0.1)', // Color de relleno
-                      |                }, {
-                      |                    label: 'Ingresos Mínimos',
-                      |                    data: revenueMin,
-                      |                    borderColor: 'rgba(0, 0, 0, 0)',
-                      |                    fill: '+1',
-                      |                }, {
-                      |                    label: 'Ingresos Máximos',
-                      |                    data: revenueMax,
-                      |                    borderColor: 'rgba(0, 0, 0, 0)',
-                      |                    fill: false,
-                      |                    backgroundColor: 'rgba(0, 255, 0, 0.1)', // Color de relleno
-                      |
-                      |                }],
+                      |                datasets: datasets
                       |            },
                       |            options: {
                       |                scales: {
@@ -256,7 +282,7 @@ object Constants {
                       |                        beginAtZero: true,
                       |                        title: {
                       |                            display: true,
-                      |                            text: 'Ingresos'
+                      |                            text: 'Ingresos medios'
                       |                        }
                       |                    }
                       |                }

@@ -1,0 +1,346 @@
+{
+  "real": [
+    {
+      "prediction_date": 1004572800000,
+      "revenue_mean": 461.8705445667,
+      "revenue_95_lower_bound": 417.0779302148,
+      "revenue_95_upper_bound": 506.6631589186,
+      "revenue_min": 402.3333062393,
+      "revenue_max": 625.1883841505
+    },
+    {
+      "prediction_date": 1007164800000,
+      "revenue_mean": 541.8796924478,
+      "revenue_95_lower_bound": 468.7766344021,
+      "revenue_95_upper_bound": 614.9827504936,
+      "revenue_min": 432.9434319769,
+      "revenue_max": 800.4028448868
+    },
+    {
+      "prediction_date": 1009843200000,
+      "revenue_mean": 630.6927600559,
+      "revenue_95_lower_bound": 522.0122907075,
+      "revenue_95_upper_bound": 739.3732294044,
+      "revenue_min": 455.0483359708,
+      "revenue_max": 1005.8679840027
+    },
+    {
+      "prediction_date": 1012521600000,
+      "revenue_mean": 724.3115162732,
+      "revenue_95_lower_bound": 577.4862611591,
+      "revenue_95_upper_bound": 871.1367713873,
+      "revenue_min": 474.7396653414,
+      "revenue_max": 1221.297267014
+    },
+    {
+      "prediction_date": 1014940800000,
+      "revenue_mean": 816.0111881386,
+      "revenue_95_lower_bound": 635.3595452797,
+      "revenue_95_upper_bound": 996.6628309976,
+      "revenue_min": 496.1602180496,
+      "revenue_max": 1419.2065974216
+    },
+    {
+      "prediction_date": 1017619200000,
+      "revenue_mean": 897.9793663365,
+      "revenue_95_lower_bound": 695.5023301713,
+      "revenue_95_upper_bound": 1100.4564025017,
+      "revenue_min": 521.7226578284,
+      "revenue_max": 1563.3655040993
+    },
+    {
+      "prediction_date": 1020211200000,
+      "revenue_mean": 963.9234048295,
+      "revenue_95_lower_bound": 754.3115371324,
+      "revenue_95_upper_bound": 1173.5352725266,
+      "revenue_min": 551.8882773862,
+      "revenue_max": 1631.2638127835
+    },
+    {
+      "prediction_date": 1022889600000,
+      "revenue_mean": 1008.7549433321,
+      "revenue_95_lower_bound": 802.2419795876,
+      "revenue_95_upper_bound": 1215.2679070766,
+      "revenue_min": 584.6132527718,
+      "revenue_max": 1628.2613102487
+    },
+    {
+      "prediction_date": 1025481600000,
+      "revenue_mean": 1028.0919465998,
+      "revenue_95_lower_bound": 825.3124484884,
+      "revenue_95_upper_bound": 1230.8714447112,
+      "revenue_min": 598.369030852,
+      "revenue_max": 1571.9924153984
+    },
+    {
+      "prediction_date": 1028160000000,
+      "revenue_mean": 1015.9360085381,
+      "revenue_95_lower_bound": 806.710710608,
+      "revenue_95_upper_bound": 1225.1613064681,
+      "revenue_min": 510.4608852652,
+      "revenue_max": 1469.6268220142
+    },
+    {
+      "prediction_date": 1030838400000,
+      "revenue_mean": 964.4568277109,
+      "revenue_95_lower_bound": 728.9553118683,
+      "revenue_95_upper_bound": 1199.9583435535,
+      "revenue_min": 377.1383563266,
+      "revenue_max": 1554.9447336214
+    },
+    {
+      "prediction_date": 1033430400000,
+      "revenue_mean": 865.2054411539,
+      "revenue_95_lower_bound": 578.5961397638,
+      "revenue_95_upper_bound": 1151.814742544,
+      "revenue_min": 188.9452634705,
+      "revenue_max": 1755.7599556099
+    }
+  ],
+  "5527f7356a87cec5d061767332baf6dd52a8d98ad469704be27e6eb403ab92e7_3fbe5ed156f149939d9396e729af009070ccc54984b5bd8e088d86a72f8ac879": [
+    {
+      "prediction_date": 1004572800000,
+      "revenue_mean": 413.650166673,
+      "revenue_95_lower_bound": 380.3752237494,
+      "revenue_95_upper_bound": 446.9251095967,
+      "revenue_min": 373.3327473057,
+      "revenue_max": 478.0127341524
+    },
+    {
+      "prediction_date": 1007164800000,
+      "revenue_mean": 447.1155650341,
+      "revenue_95_lower_bound": 392.888323052,
+      "revenue_95_upper_bound": 501.3428070161,
+      "revenue_min": 365.1137873693,
+      "revenue_max": 539.942426782
+    },
+    {
+      "prediction_date": 1009843200000,
+      "revenue_mean": 476.1645952799,
+      "revenue_95_lower_bound": 395.2807629352,
+      "revenue_95_upper_bound": 557.0484276246,
+      "revenue_min": 345.7369135574,
+      "revenue_max": 608.586535634
+    },
+    {
+      "prediction_date": 1012521600000,
+      "revenue_mean": 502.6877043098,
+      "revenue_95_lower_bound": 392.873336732,
+      "revenue_95_upper_bound": 612.5020718877,
+      "revenue_min": 323.3687401032,
+      "revenue_max": 688.6005963864
+    },
+    {
+      "prediction_date": 1014940800000,
+      "revenue_mean": 527.0022216585,
+      "revenue_95_lower_bound": 388.0506428102,
+      "revenue_95_upper_bound": 665.9538005067,
+      "revenue_min": 303.2341384163,
+      "revenue_max": 779.2488140523
+    },
+    {
+      "prediction_date": 1017619200000,
+      "revenue_mean": 547.9318848573,
+      "revenue_95_lower_bound": 380.0938078618,
+      "revenue_95_upper_bound": 715.7699618528,
+      "revenue_min": 289.6471901892,
+      "revenue_max": 876.4410850903
+    },
+    {
+      "prediction_date": 1020211200000,
+      "revenue_mean": 562.9103049897,
+      "revenue_95_lower_bound": 366.2049529054,
+      "revenue_95_upper_bound": 759.6156570741,
+      "revenue_min": 285.8734273393,
+      "revenue_max": 973.1600012134
+    },
+    {
+      "prediction_date": 1022889600000,
+      "revenue_mean": 567.8011153675,
+      "revenue_95_lower_bound": 342.452749177,
+      "revenue_95_upper_bound": 793.149481558,
+      "revenue_min": 293.4301983839,
+      "revenue_max": 1056.4470528376
+    },
+    {
+      "prediction_date": 1025481600000,
+      "revenue_mean": 557.2896512584,
+      "revenue_95_lower_bound": 302.7795267551,
+      "revenue_95_upper_bound": 811.7997757617,
+      "revenue_min": 269.5429300834,
+      "revenue_max": 1114.4655942078
+    },
+    {
+      "prediction_date": 1028160000000,
+      "revenue_mean": 525.1914966543,
+      "revenue_95_lower_bound": 238.2203451873,
+      "revenue_95_upper_bound": 812.1626481213,
+      "revenue_min": 170.4654344125,
+      "revenue_max": 1138.9769028686
+    },
+    {
+      "prediction_date": 1030838400000,
+      "revenue_mean": 463.1459037884,
+      "revenue_95_lower_bound": 137.0919054536,
+      "revenue_95_upper_bound": 789.1999021233,
+      "revenue_min": 31.7227984403,
+      "revenue_max": 1119.0714321786
+    },
+    {
+      "prediction_date": 1033430400000,
+      "revenue_mean": 361.2541085004,
+      "revenue_95_lower_bound": 0.0,
+      "revenue_95_upper_bound": 737.2447753665,
+      "revenue_min": 0.0,
+      "revenue_max": 1046.7643033594
+    }
+  ],
+  "3345821e031f176625606aa47a2e8bf7492f22e19315924a141371a9349915e8_4bf3fcb1090c5362f115577582e490079c659107fa05bad1a54d239b95a1abf7": [
+    {
+      "prediction_date": 1004572800000,
+      "revenue_mean": 460.0555011854,
+      "revenue_95_lower_bound": 417.7157615091,
+      "revenue_95_upper_bound": 502.3952408616,
+      "revenue_min": 407.0208988048,
+      "revenue_max": 588.443828141
+    },
+    {
+      "prediction_date": 1007164800000,
+      "revenue_mean": 521.6629043071,
+      "revenue_95_lower_bound": 463.0582889673,
+      "revenue_95_upper_bound": 580.2675196468,
+      "revenue_min": 452.3453852967,
+      "revenue_max": 695.1418069592
+    },
+    {
+      "prediction_date": 1009843200000,
+      "revenue_mean": 580.6666025569,
+      "revenue_95_lower_bound": 501.149113116,
+      "revenue_95_upper_bound": 660.1840919978,
+      "revenue_min": 482.5148359317,
+      "revenue_max": 793.6394525969
+    },
+    {
+      "prediction_date": 1012521600000,
+      "revenue_mean": 636.1059736144,
+      "revenue_95_lower_bound": 531.3011895628,
+      "revenue_95_upper_bound": 740.9107576661,
+      "revenue_min": 509.0234243114,
+      "revenue_max": 877.4441570932
+    },
+    {
+      "prediction_date": 1014940800000,
+      "revenue_mean": 687.8067066112,
+      "revenue_95_lower_bound": 553.7897440294,
+      "revenue_95_upper_bound": 821.823669193,
+      "revenue_min": 514.6538343421,
+      "revenue_max": 954.2231921584
+    },
+    {
+      "prediction_date": 1017619200000,
+      "revenue_mean": 735.4725970469,
+      "revenue_95_lower_bound": 568.2551268583,
+      "revenue_95_upper_bound": 902.6900672355,
+      "revenue_min": 511.0809263409,
+      "revenue_max": 1097.4140627161
+    },
+    {
+      "prediction_date": 1020211200000,
+      "revenue_mean": 778.1389362412,
+      "revenue_95_lower_bound": 572.3813999103,
+      "revenue_95_upper_bound": 983.8964725721,
+      "revenue_min": 484.9270377011,
+      "revenue_max": 1245.0645459157
+    },
+    {
+      "prediction_date": 1022889600000,
+      "revenue_mean": 813.9180573438,
+      "revenue_95_lower_bound": 561.4726783428,
+      "revenue_95_upper_bound": 1066.3634363449,
+      "revenue_min": 434.6118941254,
+      "revenue_max": 1393.1115546348
+    },
+    {
+      "prediction_date": 1025481600000,
+      "revenue_mean": 839.3038685602,
+      "revenue_95_lower_bound": 529.3225961817,
+      "revenue_95_upper_bound": 1149.2851409387,
+      "revenue_min": 318.4600721383,
+      "revenue_max": 1534.5322496912
+    },
+    {
+      "prediction_date": 1028160000000,
+      "revenue_mean": 848.9979693044,
+      "revenue_95_lower_bound": 467.4840196082,
+      "revenue_95_upper_bound": 1230.5119190007,
+      "revenue_min": 152.5506171879,
+      "revenue_max": 1663.5073793857
+    },
+    {
+      "prediction_date": 1030838400000,
+      "revenue_mean": 835.3915168231,
+      "revenue_95_lower_bound": 365.5217251907,
+      "revenue_95_upper_bound": 1305.2613084555,
+      "revenue_min": 0.0,
+      "revenue_max": 1773.3903359276
+    },
+    {
+      "prediction_date": 1033430400000,
+      "revenue_mean": 789.1694177506,
+      "revenue_95_lower_bound": 212.0641595784,
+      "revenue_95_upper_bound": 1366.2746759228,
+      "revenue_min": 0.0,
+      "revenue_max": 1855.9242036811
+    }
+  ],
+  "mean": [
+    {
+      "prediction_date": "1004572800000",
+      "revenue_mean": 449.5891978352
+    },
+    {
+      "prediction_date": "1007164800000",
+      "revenue_mean": 515.881736808
+    },
+    {
+      "prediction_date": "1009843200000",
+      "revenue_mean": 583.7015393814
+    },
+    {
+      "prediction_date": "1012521600000",
+      "revenue_mean": 651.5461966714
+    },
+    {
+      "prediction_date": "1014940800000",
+      "revenue_mean": 716.8869044338
+    },
+    {
+      "prediction_date": "1017619200000",
+      "revenue_mean": 776.4279023421
+    },
+    {
+      "prediction_date": "1020211200000",
+      "revenue_mean": 826.205824883
+    },
+    {
+      "prediction_date": "1022889600000",
+      "revenue_mean": 861.6815480736
+    },
+    {
+      "prediction_date": "1025481600000",
+      "revenue_mean": 877.8135024424
+    },
+    {
+      "prediction_date": "1028160000000",
+      "revenue_mean": 868.4469270429
+    },
+    {
+      "prediction_date": "1030838400000",
+      "revenue_mean": 825.9667738973
+    },
+    {
+      "prediction_date": "1033430400000",
+      "revenue_mean": 741.1863191625
+    }
+  ]
+}
